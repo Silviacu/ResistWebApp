@@ -121,3 +121,13 @@ a{
     background-color: gray;
 }
 
+.maps{
+    
+    background-image:url(../img/fakemap2.JPG);
+    
+    
+    height:400px;
+    width:100%;
+    background-size:cover;
+    box-shadow: inset 0 0 100px #000;
+}
