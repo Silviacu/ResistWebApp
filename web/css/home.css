@@ -69,6 +69,13 @@
     
 }
 
+.tighten-font {
+    letter-spacing: -3px;
+}
+
+.tighten-font-mini {
+    letter-spacing: -1px;
+}
 .container-fluid{
    background-color: #E59DA1;
     border: 2px;
