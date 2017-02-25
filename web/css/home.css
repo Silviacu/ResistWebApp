@@ -3,7 +3,7 @@
     font-size:1.8em;
 }
 #topContainer {
-    background-image:url(../img/ResistBeachPhoto.jpg);
+    background-image:url(../img/protest1.jpg);
     height:400px;
     width:100%;
     background-size:cover;
@@ -42,4 +42,33 @@
 }
 .appstoreImage {
     width:250px;
+}
+
+
+#createp{
+    background-color: red;
+    
+}
+
+#joinp{
+    background-color: blue;
+    
+}
+
+#contactus{
+    background-color: green;
+    
+}
+
+.container-fluid{
+    
+    margin: 0 auto;
+   width: 100%;
+   background-size:cover;
+    
+}
+
+.page-header{
+    
+    
 }
