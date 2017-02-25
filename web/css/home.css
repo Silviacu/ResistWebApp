@@ -1,6 +1,6 @@
 .navbar-brand {
 
-    font-size:1.8em;
+    font-size:1.5em;
 }
 #topContainer {
     background-image:url(../img/protest1.jpg);
@@ -12,8 +12,13 @@
     margin-top:100px;
     text-align:center;
 }
+
+#topRow p{
+    
+    font-size:200%;
+}
 #topRow h1 {
-    font-size:300%;
+    font-size:900%;
 }
 #emailSignup {
     margin-top:50px;
@@ -46,23 +51,29 @@
 
 
 #createp{
-    background-color: red;
+    //background-color: #C89292;
+    //border: 2px;
+    //border-radius: 10px;
     
 }
 
 #joinp{
-    background-color: blue;
+   // background-color: blue;
     
 }
 
 #contactus{
-    background-color: green;
+    //background-color: green;
     
 }
 
 .container-fluid{
+   background-color: #F0B7B7;
+    border: 2px;
+    border-radius: 10px;
     
-    margin: 0 auto;
+    
+   margin: 0 auto;
    width: 100%;
    background-size:cover;
     
@@ -70,5 +81,5 @@
 
 .page-header{
     
-    
+    margin-top: 70px;
 }
