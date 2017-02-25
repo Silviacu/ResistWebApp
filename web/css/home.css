@@ -88,4 +88,36 @@
 
 .modal-dialog {
     background-color: #E89DA1;
+    border: 2px;
+    border-radius: 10px;
+    
 }
+
+a:hover{
+     text-decoration: none;
+     color: black;
+    
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+
+
+.btn {
+    border-color: black;
+    background-color: #E59DA1;
+}
+
+.btn:hover{
+    
+    background-color: gray;
+}
+
+.btn:toggle{
+    
+    background-color: gray;
+}
+
