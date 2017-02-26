@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $.ajax({
+            type: "GET",
+            url: "https://maps.googleapis.com/maps/api/geocode/xml?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YAIzaSyCBQt8Dy16uRQeqNiUxPX3Waq9e3_bduh4"
+            dataType: "xml",
+            success: processXML
+        });
+
+        function processXML(xml) {
+            // "address" = name of address field in FB
+            $(xml).find("address").each(function() {
+                if ($(this).find("type").text() == "postal_code") {
+                    alert($(this).find("log_name").text());
+                }
+            });
+        }
+    </script>
+</body>
+</html>
