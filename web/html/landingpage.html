@@ -166,16 +166,15 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/
-    jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as
-    needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/
+        jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as
+        needed -->
+        <script src="js/bootstrap.min.js"></script>
+        <script>
                                     $(".contentContainer").css("min-height", $(window).height());
                                     var personName = document.getElementById("inputName");
                                     var protestLocation = document.getElementById("inputAddress");
@@ -195,11 +194,11 @@
                                             "Protest Location": protestLocationText
                                         });
                                     }
-    </script>
+        </script>
 
 
-    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
-    <script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+        <script>
                                     // Initialize Firebase
                                     var config = {
                                         apiKey: "AIzaSyCtE_578X-yCAwzVTmTLsh9yY4W-MCmKIY",
@@ -209,41 +208,46 @@
                                         messagingSenderId: "653638584483"
                                     };
                                     firebase.initializeApp(config);
-    </script>
-    <script>
-        var data = '';
-        var datab = firebase.database().ref();
-        datab.on('child_added', function (childSnapshot) {
-            data = childSnapshot.val();
-            console.log(data.Location);
+        </script>
+        <script>
+            var data = '';
+            var datab = firebase.database().ref();
+            datab.on('child_added', function (childSnapshot) {
+                data = childSnapshot.val();
+                console.log(data.Location);
+                document.getElementById('d') = data.Location;
 
-
-        })
-        var HttpClient = function () {
-            this.get = function (aUrl, aCallback) {
-                var anHttpRequest = new XMLHttpRequest();
-                anHttpRequest.onreadystatechange = function () {
-                    if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
-                        aCallback(anHttpRequest.responseText);
-                }
-
-                anHttpRequest.open("GET", aUrl, true);
-                anHttpRequest.send(null);
+            })
+            
+            function findVals(){
+                document.getElementById("testingd") = data.Location;
             }
-        }
+            
+            var HttpClient = function () {
+                this.get = function (aUrl, aCallback) {
+                    var anHttpRequest = new XMLHttpRequest();
+                    anHttpRequest.onreadystatechange = function () {
+                        if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                            aCallback(anHttpRequest.responseText);
+                    }
 
-        var client = new HttpClient();
-        client.get('http://www.mapquestapi.com/geocoding/v1/address?key=eWaFrBCVhLYXGIl75uOrI9h5MGiKZdMA&location=' + data.Location, function (response) {
+                    anHttpRequest.open("GET", aUrl, true);
+                    anHttpRequest.send(null);
+                }
+            }
 
-            var object = JSON.parse(response);
-            //console.log(object);
-            var latitude = object.results[0].locations[1].latLng.lat;
-            var longitude = object.results[0].locations[1].latLng.lng;
-            console.log(latitude);
-            // do something with response
-        });
+            var client = new HttpClient();
+            client.get('http://www.mapquestapi.com/geocoding/v1/address?key=eWaFrBCVhLYXGIl75uOrI9h5MGiKZdMA&location=' + data.Location, function (response) {
 
-    </script>
+                var object = JSON.parse(response);
+                //console.log(object);
+                var latitude = object.results[0].locations[1].latLng.lat;
+                var longitude = object.results[0].locations[1].latLng.lng;
+                console.log(latitude);
+                // do something with response
+            });
 
-</body>
+        </script>
+
+    </body>
 </html>
