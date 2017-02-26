@@ -25,23 +25,7 @@ function submitClick() {
         "Protest Info": protestInfoText,
         "Protest Location": protestLocationText
     });
-   
 
-//    fireBaseRef.push().set(personNameText);
-//    fireBaseRef.push().set(protestInfoText);
-//    fireBaseRef.push().set(protestLocationText);
-//
-//    window.alert(personNameText);
-
-//    var submissions = fireBaseRef.child("submissions");
-//
-//    submissions.push({
-//        "Name": personNameText,
-//        "Protest Info": protestInfoText,
-//        "Protest Location": protestLocationText
-//    });
-
-    //   window.alert(personNameText);
 
 
 }

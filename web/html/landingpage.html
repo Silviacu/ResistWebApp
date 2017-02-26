@@ -6,12 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Home</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/home.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/home.css">
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 
     </head>
@@ -209,6 +209,40 @@
                                         messagingSenderId: "653638584483"
                                     };
                                     firebase.initializeApp(config);
+    </script>
+    <script>
+        var data = '';
+        var datab = firebase.database().ref();
+        datab.on('child_added', function (childSnapshot) {
+            data = childSnapshot.val();
+            console.log(data.Location);
+
+
+        })
+        var HttpClient = function () {
+            this.get = function (aUrl, aCallback) {
+                var anHttpRequest = new XMLHttpRequest();
+                anHttpRequest.onreadystatechange = function () {
+                    if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                        aCallback(anHttpRequest.responseText);
+                }
+
+                anHttpRequest.open("GET", aUrl, true);
+                anHttpRequest.send(null);
+            }
+        }
+
+        var client = new HttpClient();
+        client.get('http://www.mapquestapi.com/geocoding/v1/address?key=eWaFrBCVhLYXGIl75uOrI9h5MGiKZdMA&location=' + data.Location, function (response) {
+
+            var object = JSON.parse(response);
+            //console.log(object);
+            var latitude = object.results[0].locations[1].latLng.lat;
+            var longitude = object.results[0].locations[1].latLng.lng;
+            console.log(latitude);
+            // do something with response
+        });
+
     </script>
 
 </body>
