@@ -138,3 +138,57 @@ a{
     background-size:cover;
     box-shadow: inset 0 0 100px #000;
 }
+.btn-sample {
+	color: #FFFFFF;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	background-color: #E6706A;
+	*background-color: #E6706A;
+	background-image: -moz-linear-gradient(top, #E59DA1, #E6706A);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#E59DA1), to(#E6706A));
+	background-image: -webkit-linear-gradient(top, #E59DA1, #E6706A);
+	background-image: -o-linear-gradient(top, #E59DA1, #E6706A);
+	background-image: linear-gradient(to bottom, #E59DA1, #E6706A);
+	background-repeat: repeat-x;
+	border-color: #E6706A;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E59DA1', endColorstr='#E6706A', GradientType=0);
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-sample:hover,
+.btn-sample:focus,
+.btn-sample:active,
+.btn-sample.active,
+.btn-sample.disabled,
+.btn-sample[disabled] {
+	color: #FFFFFF;
+	background-color: #E6706A;
+	*background-color: #003bb3;
+} 
+
+#pg1box{
+                color: white;
+                margin: 0 auto;
+                font-size: 70%;
+                
+            }
+            #pg1box h1{
+                color: #610A03;
+                
+            }
+            #pg1boxpara{
+                font-size: 80%;
+                background-color: black;
+                border-radius: 5px;
+                padding: 5%;
+                opacity: .5;
+                
+            }
+            
+            #backgroundmission{
+              
+                 background-image:url(../img/protest2.jpg);
+    height:400px;
+    width:100%;
+    background-size:cover;
+    box-shadow: inset 0 0 100px #000;
+            }

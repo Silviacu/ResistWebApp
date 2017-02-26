@@ -1,60 +1,137 @@
-
-<html>
+<html lang="en">
     <head>
-        <title>Mission Statement</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Sansita" rel="stylesheet">
-        
-        
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
 
     </head>
-    <body style="background: url('../img/alice-donovan-rouse-195456.jpg'); background-size: 100% 100%; font-family: 'Sansita', sans-serif;">
-    <center>
-        <div style="width:50%; float:left; padding: 30px;">
-            <h1><b><font color="white">Mission Statement</font></b></h1>
-        </div>
-        <div style="padding: 30px;">
-            <h3 class="well" style="width: 10%; float:right; border-radius: 15px;"><a href="landingpage.html">Go Back</a></h3>
-        </div></center>
-    <br><br>
-    <center>
-        <div style="padding: 30px">
+    <body data-spy="scroll" data-target=".navbar-collapse">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">
+                        <span class="glyphicon glyphicon-off"> </span>
+                        Resist</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="landingpage.html">Home</a></li>
+                        <li><a href="missionANDstatement.html">Mission & Values</a></li>
+                        <li><a href="landingpage.html#createp">Create a Protest</a></li>
+                        <li><a href="#joinp">Join a Protest</a></li>
+                        <li><a href="#contactus">Contact us</a></li>
 
-            <p class = "well" style="width: 50%; font-size:15;line-height:180%; border-radius: 25px;">
-                We support the advocacy and resistance movements that reflect our 
+                    </ul>
+                    <form class="navbar-form navbar-right">
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" class="form-control"/>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" placeholder="Password" class="form-control"/>
+                        </div>
+                        <button type="submit" class="btn btn-sample">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="container contentContainer" id="backgroundmission">
+           
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3" id="topRow">
+                   <div id="pg1box">
+            <h1>Mission and Values</h1>
+                <div id="pg1boxpara">
+                    <p>
+                        We support the advocacy and resistance movements that reflect our 
                 multiple and intersecting identities. We call on all defenders of 
                 human rights to join us. Protest is the first step towards unifying
                 our communities, grounded in new relationships, to create change from 
                 the grassroots level up. We work peacefully while
                 recognizing there is no true peace without justice and equity for all.
-            </p> 
-
-            <p class = "well" style="width:50%; font-size:15; line-height:180%; border-radius: 25px">
-                The rhetoric of the past election cycle has insulted, demonized, 
+                    </p>
+                    
+                    <p>
+                       The rhetoric of the past election cycle has insulted, demonized, 
                 and threatened many of us - immigrants of all statuses, Muslims 
                 and those of diverse religious faiths, people who identify as LGBTQIA,
                 Native people, Black and Brown people, people with disabilities, 
                 survivors of sexual assault - and our communities are hurting and 
                 scared. We are confronted with the question of how to move forward 
                 in the face of national and international concern and fear.
-            </p>
-
-            <p class = "well" style="width:50%;font-size:15; line-height:180%; border-radius: 25px">
-                In the spirit of democracy and honoring the champions of human 
+                    </p>
+                    
+                    <p>
+                       In the spirit of democracy and honoring the champions of human 
                 rights, dignity, and justice who have come before us, we join 
                 in diversity to show our presence in numbers too great to ignore.
                 The Women’s March on Washington will send a bold message to our
                 new government on their first day in office, and to the world that
                 women's rights are human rights. We stand together, recognizing
                 that defending the most marginalized among us is defending all of us.
-            </p>
+                    </p>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+        </div>
 
-        </div></center>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/
+    jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as
+    needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+                                    $(".contentContainer").css("min-height", $(window).height());
+                                    var personName = document.getElementById("inputName");
+                                    var protestLocation = document.getElementById("inputAddress");
+                                    var protestInfo = document.getElementById("inputInfo");
+                                    function submitClick() {
+                                        var personNameText = personName.value;
+                                        var protestLocationText = protestLocation.value;
+                                        var protestInfoText = protestInfo.value;
+                                        console.log(personNameText + " " + protestLocationText + " " + protestInfoText);
+
+                                        window.alert(personNameText);
+                                        var fireBaseRef = firebase.database().ref();
+
+                                        fireBaseRef.push().set({
+                                            "Name": personNameText,
+                                            "Protest Info": protestInfoText,
+                                            "Protest Location": protestLocationText
+                                        });
+                                    }
+    </script>
+
+
+    <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+    <script>
+                                    // Initialize Firebase
+                                    var config = {
+                                        apiKey: "AIzaSyCtE_578X-yCAwzVTmTLsh9yY4W-MCmKIY",
+                                        authDomain: "resistwebapp.firebaseapp.com",
+                                        databaseURL: "https://resistwebapp.firebaseio.com",
+                                        storageBucket: "resistwebapp.appspot.com",
+                                        messagingSenderId: "653638584483"
+                                    };
+                                    firebase.initializeApp(config);
+    </script>
+
 </body>
 </html>
